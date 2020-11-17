@@ -5,7 +5,51 @@
     <meta charset="UTF-8" />
     <title>Trabalho Luciano</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script type="text/javascript" src="adc_excluir.js"></script>
+   var nome_adc;
+var index;
+
+function inserir(nome, sobrenome) {
+    nome_adc = document.getElementById("dados");    
+    var qtdlLinhas = nome_adc.rows.length;
+    var linha = nome_adc.insertRow(qtdlLinhas);
+
+
+    var cellNome = linha.insertCell(0);
+    var cellSobrenome = linha.insertCell(1);
+
+
+    cellNome.innerHTML = nome;
+    cellSobrenome.innerHTML = sobrenome;
+
+
+    preencherformulario();
+
+}
+
+function preencherformulario() {
+
+    for(var i = 0; i < nome_adc.rows.length; i++) 
+    {
+        nome_adc.rows[i].onclick = function() 
+        {
+            index = this.rowIndex;
+            document.getElementById("txtNome").value = nome_adc.rows[index].cells[0].innerText;
+            document.getElementById("txtSobrenome").value = nome_adc.rows[index].cells[1].innerText;
+
+        }
+    }
+}
+
+function excluir() {
+
+    for(var i = 0; i < nome_adc.rows.length; i++) 
+    {
+        if (index == i) {
+            nome_adc.deleteRow(index);
+            return;
+        }
+    }
+} 
 
     <style>
         #css {
