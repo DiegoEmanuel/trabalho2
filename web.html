@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Trabalho Luciano</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="adc_excluir.js"></script>
+
+    <style>
+        #css {
+            width: 220px;
+            margin-left: 150px;
+            margin-top: 3%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <div id="css">
+        <form>
+
+            <div class="form-group">
+                <label for="txtNome">Nome do comprador do carro</label>
+                <input type="text" class="form-control" id="txtNome" aria-describedby="emailHelp" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label for="txtSobrenome">Modelo</label>
+                <input type="text" class="form-control" id="txtSobrenome" placeholder="modelo do carro">
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg"
+                    onclick="inserir(txtNome.value, txtSobrenome.value)">
+                Inserir
+            </button>
+            <button type="button" class="btn btn-primary btn-lg"
+                    onclick="excluir()">
+                Excluir
+            </button>
+
+        </form>
+
+        <br>Para excluir um registro, basta selecionar a linha desejada e clicar no botão de excluir
+
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+
+        <table id="dados" class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sobrenome</th>
+
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+</body>
+
+</html> 
